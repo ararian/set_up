@@ -37,9 +37,14 @@ Set-WindowsExplorerOptions -EnableShowFrequentFoldersInQuickAccess
 winget install "Pycharm Community Edition" -h
 winget install Miniconda3 -h
 winget install --id  Microsoft.WindowsTerminal  -h
-winget install "NVIDIA CUDA Toolkit" -v 11.3 -h
 winget install "Microsoft Visual Studio Code" -h
+code --install-extension hediet.vscode-drawio
 winget install --id Microsoft.VisualStudio.2019.Community -h
+winget install WinSCP -h
+winget install --id Discord.Discord -h
+winget install --id 7zip.7zip -h
+winget install --id Valve.Steam -h
+winget install --id Microsoft.Teams -h
 
 # conda installを実行するための準備 conda scriptの環境設定の実施
 $path = [Environment]::GetEnvironmentVariable('Path', 'Machine')
@@ -49,17 +54,11 @@ $newpath = $path + ';' + $Home + '\miniconda3' + ';' + $Home + '\miniconda3\Libr
 conda init powershell
 conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch -y
 conda install tensorflow -y
+winget install "NVIDIA CUDA Toolkit" -v 11.3 -h
 
-winget install WinSCP -h
-winget install --id Discord.Discord -h
-winget install --id 7zip.7zip -h
-winget install --id Valve.Steam -h
-winget install --id Microsoft.Teams -h
 wsl --install
 Restart-Computer -Force
 wsl --set-default-version 2
-code --install-extension hediet.vscode-drawio
-
 
 Enable-UAC
 Enable-MicrosoftUpdate
