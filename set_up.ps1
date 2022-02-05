@@ -39,6 +39,7 @@ winget install Miniconda3 -h
 winget install --id  Microsoft.WindowsTerminal  -h
 winget install "Microsoft Visual Studio Code" -h
 code --install-extension hediet.vscode-drawio
+winget install gitkraken -h
 winget install --id Microsoft.VisualStudio.2019.Community -h
 winget install WinSCP -h
 winget install --id Discord.Discord -h
