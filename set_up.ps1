@@ -58,8 +58,17 @@ conda install tensorflow -y
 winget install "NVIDIA CUDA Toolkit" -v 11.3 -h
 
 wsl --install
+
+# 再起動後の実行処理を設定
+$regRunOnceKey = "HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce"
+$powerShell = (Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")
+$script = "wsl --set-default-version 2"
+$restartKey = "Restart-And-RunOnce"
+
+Set-ItemProperty -path $regRunOnceKey -name $restartKey -value "$powerShell $script"
+
 Restart-Computer -Force
-wsl --set-default-version 2
+
 
 Enable-UAC
 Enable-MicrosoftUpdate
