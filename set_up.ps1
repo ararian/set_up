@@ -44,6 +44,7 @@ winget install --id Microsoft.VisualStudio.2019.Community -h
 winget install WinSCP -h
 winget install --id Discord.Discord -h
 winget install --id 7zip.7zip -h
+winget install --id Git.Git -h
 winget install --id Valve.Steam -h
 winget install --id Microsoft.Teams -h
 
